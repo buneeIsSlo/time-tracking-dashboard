@@ -4,16 +4,18 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = env => {
     let devType = env.production || false;
-    console.log(devType);
+    //console.log(devType);
 
     return {
         mode: devType ? "production" : "development",
 
-        entry: "./src/js/app.js",
+        entry: {
+            app: path.resolve(__dirname, "src/js/app.js")
+        } ,
 
         output: {
-            filename: "js/app.bundle.js",
             path: path.resolve(__dirname, "docs"),
+            filename: "js/app.[contenthash].bundle.js",
             assetModuleFilename: "imgs/[name][ext]",
             clean: true
         },
@@ -27,7 +29,7 @@ module.exports = env => {
 
         module: {
             rules: [{
-                    test: /\.html/g,
+                    test: /\.html/,
                     use: ["html-loader"]
                 },
 
@@ -37,13 +39,21 @@ module.exports = env => {
                 },
 
                 {
-                    test: /\.css/g,
+                    test: /(\.css)$/,
                     use: [
                         devType ? MiniCssExtractPlugin.loader : "style-loader",
                         {
                             loader: "css-loader"
                         }
                     ]
+                },
+
+                {
+                    test: /\.js/,
+                    exclude: /node_modules/,
+                    use: {
+                        loader: "babel-loader"
+                    }
                 }
             ]
         },
