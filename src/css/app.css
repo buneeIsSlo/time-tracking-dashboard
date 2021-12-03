@@ -1,6 +1,87 @@
+/* ----- Typography ----- */
+
 body {
-    background-color: salmon;
-    color: moccasin;
-    padding: 100px;
-    outline: 3px dotted #fff;
+    font-family: var(--ff);
+}
+
+.card__report {
+    font-size: 1.5rem;
+    font-weight: var(--fw-light);
+}
+
+h1 {
+    font-size: 2.4rem;
+    font-weight: var(--fw-light);
+}
+
+.card__item {
+    font-size: 1.8rem;
+    font-weight: var(--fw-mid);
+}
+
+.card__title {
+    font-size: 1.8rem;
+    font-weight: var(--fw-bold);
+}
+
+.card__time {
+    font-size: 3rem;
+    font-weight: var(--fw-light);
+}
+
+.card__history {
+    font-size: 1.5rem;
+    font-weight: var(--fw-mid);
+}
+
+
+/* ----- Global Styles ----- */
+
+body {
+    background-color: var(--c-very-dark-blue);
+    padding: 4rem 2rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+.card--profile-wrapper,
+.card--wrapper {
+    background-color: var(--c-dark-blue);
+}
+
+.card__profile {
+    background-color: var(--c-blue);
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__image {
+    width: 75px;
+    height: 75px;
+    outline: 4px solid #fff;
+    border-radius: 100px;
+}
+
+.card__report {
+    margin-top: 1rem;
+    color: var(--c-pale-blue);
+}
+
+.card__name {
+    margin: 0px 0px 0px 0px;
+    color: #fff;
+}
+
+.card__list {
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.card__item {
+    color: var(--c-desaturated-blue);
 }
