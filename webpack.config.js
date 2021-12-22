@@ -16,7 +16,7 @@ module.exports = env => {
         output: {
             path: path.resolve(__dirname, "docs"),
             filename: "js/app.[contenthash].bundle.js",
-            assetModuleFilename: "imgs/[name][ext]",
+            assetModuleFilename: "imgs/[name][contenthash][ext]",
             clean: true
         },
 
@@ -49,10 +49,13 @@ module.exports = env => {
                 },
 
                 {
-                    test: /\.js/,
+                    test: /\.js$/,
                     exclude: /node_modules/,
                     use: {
-                        loader: "babel-loader"
+                        loader: "babel-loader",
+                        options: {
+                            presets: ["@babel/preset-env"]
+                        }
                     }
                 }
             ]
@@ -64,7 +67,7 @@ module.exports = env => {
                 template: path.resolve(__dirname, "./src/index.html")
             }),
             new MiniCssExtractPlugin({
-                filename: "css/main.css"
+                filename: "css/main.[contenthash].css"
             })
         ]
 
