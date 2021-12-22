@@ -23,27 +23,31 @@ body {
 }
 
 .blue img {
+    opacity: 0;
     max-width: 120px;
     border-radius: 100px;
     box-shadow: -2px -2px 1px #4537b7, 2px 2px 1px #6b57ff;
 }
 
 .blue__greeting {
+    opacity: 0;
     font-size: 3.5rem;
     font-weight: var(--fw-light);
     color: #fff;
 }
 
 .blue__message {
+    opacity: 0;
     font-size: 1.5rem;
     font-weight: var(--fw-bold);
     color: var(--c-dark-blue);
 }
 
 .blue__progress {
+    opacity: 0;
+    width: 30%;
     height: .3rem;
     background-color: #ffff;
-    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
