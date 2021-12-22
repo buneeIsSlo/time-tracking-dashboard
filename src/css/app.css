@@ -51,6 +51,18 @@ p {
     margin: 0;
 }
 
+li,
+button {
+    border: none;
+    outline: 0;
+}
+
+li:focus,
+button:focus {
+    outline: 2px dashed hsl(0, 0%, 100%);
+    outline-offset: 4px;
+}
+
 .container {
     display: grid;
     grid-gap: 3rem;
@@ -86,6 +98,7 @@ p {
     height: 75px;
     outline: 4px solid #fff;
     border-radius: 100px;
+    cursor: pointer;
 }
 
 .card__report {
@@ -96,6 +109,12 @@ p {
 .card__name {
     margin: 5px 0px 0px 0px;
     color: #fff;
+    cursor: pointer;
+    transition: text-shadow .3s ease-in-out;
+}
+
+.card__name:hover {
+    text-shadow: 1px 1px 2px #fff;
 }
 
 .card__list {
@@ -103,12 +122,14 @@ p {
     display: flex;
     justify-content: space-between;
     list-style: none;
+    pointer-events: none;
 }
 
 .card__item {
     color: var(--c-desaturated-blue);
     cursor: pointer;
     transition: color .5s cubic-bezier(0.5, 1, 0.89, 1);
+    pointer-events: auto;
 }
 
 .card__item:hover {
@@ -175,6 +196,38 @@ p {
     cursor: pointer;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, .2);
     pointer-events: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.card__stats:before {
+    content: "";
+    position: absolute;
+    top: var(--top);
+    left: var(--left);
+    width: 0px;
+    height: 0px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: hsla(234, 44%, 50%, 0.596);
+    transition: all 0.6s cubic-bezier(0.5, 1, 0.89, 1);
+
+}
+
+.card__stats:hover:before {
+    width: 1000px;
+    height: 1000px;
+}
+
+.card__title,
+.card__options,
+.card--data {
+    z-index: 2;
+}
+
+.card__options {
+    background: transparent;
+    cursor: pointer;
 }
 
 .card--col {
@@ -221,6 +274,9 @@ p {
     color: var(--c-pale-blue);
 }
 
+
+/* ----- Animations ----- */
+
 @keyframes bgIconScaleUp {
     from {
         background-size: 6.5rem;
@@ -259,7 +315,7 @@ p {
 /* ----- Media Queries ----- */
 
 
-/* Screen widths 425px */
+/* Screen widths 425px to 768px */
 
 @media (min-width: 425px) {
 
@@ -274,6 +330,7 @@ p {
 
 }
 
+/* Screen widths 768px to 1150px*/
 
 @media (min-width: 768px) {
 
@@ -297,6 +354,8 @@ p {
     }
 
 }
+
+/* Screen widths 1150px and above */
 
 @media (min-width: 1150px) {
 
@@ -330,6 +389,11 @@ p {
         padding: 4rem 2.5rem;
     }
 
+    .card__stats:hover:before {
+        width: 700px;
+        height: 700px;
+    }
+
     .card__title {
         font-size: 2rem;
     }
@@ -344,4 +408,36 @@ p {
         gap: 1rem;
     }
 
+}
+
+
+/* If user prefers reduced motion */
+
+@media (prefers-reduced-motion) {
+
+    .card--wrapper,
+    .card--wrapper:hover {
+        animation: none;
+    }
+
+    .card__stats:before {
+        display: none;
+    }
+
+    .card__stats {
+        transition: all .4s ease-in-out;
+    }
+
+    .card__stats:hover {
+        background-color: hsla(234, 44%, 50%);
+    }
+}
+
+
+/* Dynamically remove and add with JS */
+
+.active {
+    color: #fff;
+    text-shadow: 0px 0px 3px #fff;
+    transition: text-shadow .2s cubic-bezier(0.5, 1, 0.89, 1);
 }
