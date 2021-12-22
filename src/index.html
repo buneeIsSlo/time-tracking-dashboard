@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/buneeFavIcon.png">
     <title>Dashboard</title>
 </head>
 
@@ -13,19 +14,19 @@
 
     <!-- Fake Loader Container -->
     <div class="loader blue">
-        <img src="./images/image-jeremy.png">
+        <img src="./images/image-jeremy.png" alt="Jeremy Robson">
         <p class="blue__greeting">Hey Jeremy!</p>
         <p class="blue__message">Hang tight while we generate your report...</p>
         <span class="blue__progress"></span>
     </div>
 
     <!-- Bunch of divs that act as a trail for the fake laoder -->
-    <div class="loader orange"></div>
-    <div class="loader cyan"></div>
-    <div class="loader peach"></div>
-    <div class="loader green"></div>
-    <div class="loader purple"></div>
-    <div class="loader yellow"></div>
+    <div class="loader orange" aria-hidden="true"></div>
+    <div class="loader cyan" aria-hidden="true"></div>
+    <div class="loader peach" aria-hidden="true"></div>
+    <div class="loader green" aria-hidden="true"></div>
+    <div class="loader purple" aria-hidden="true"></div>
+    <div class="loader yellow" aria-hidden="true"></div>
 
     <!-- Dashboard container (Don't know why I gave it a class of card) -->
     <main class="card container">
@@ -38,9 +39,9 @@
                 </div>
             </div>
             <ul class="card__list">
-                <li class="card__item" data-stats="daily">Daily</li>
-                <li class="card__item" data-stats="weekly">Weekly</li>
-                <li class="card__item" data-stats="monthly">Monthly</li>
+                <li class="card__item" data-stats="daily" tabindex="0">Daily</li>
+                <li class="card__item" data-stats="weekly" tabindex="0">Weekly</li>
+                <li class="card__item" data-stats="monthly" tabindex="0">Monthly</li>
             </ul>
         </div>
 
@@ -49,11 +50,11 @@
             <div class="card__stats card--radius">
                 <div class="card--col">
                     <h2 class="card__title">Work</h2>
-                    <div class="card__options card--col">
+                    <button class="card__options card--col" aria-label="options">
                         <span class="dot__one"></span>
                         <span class="dot__two"></span>
                         <span class="dot__three"></span>
-                    </div>
+                    </button>
                 </div>
                 <div class="card--data card--col">
                     <p class="card__time">5hrs</p>
@@ -67,11 +68,11 @@
             <div class="card__stats card--radius">
                 <div class="card--col">
                     <h2 class="card__title">Play</h2>
-                    <div class="card__options card--col">
+                    <button class="card__options card--col" aria-label="options">
                         <span class="dot__one"></span>
                         <span class="dot__two"></span>
                         <span class="dot__three"></span>
-                    </div>
+                    </button>
                 </div>
                 <div class="card--data card--col">
                     <p class="card__time">1hrs</p>
@@ -85,11 +86,11 @@
             <div class="card__stats card--radius">
                 <div class="card--col">
                     <h2 class="card__title">Study</h2>
-                    <div class="card__options card--col">
+                    <button class="card__options card--col" aria-label="options">
                         <span class="dot__one"></span>
                         <span class="dot__two"></span>
                         <span class="dot__three"></span>
-                    </div>
+                    </button>
                 </div>
                 <div class="card--data card--col">
                     <p class="card__time">0hrs</p>
@@ -103,11 +104,11 @@
             <div class="card__stats card--radius">
                 <div class="card--col">
                     <h2 class="card__title">Exercise</h2>
-                    <div class="card__options card--col">
+                    <button class="card__options card--col" aria-label="options">
                         <span class="dot__one"></span>
                         <span class="dot__two"></span>
                         <span class="dot__three"></span>
-                    </div>
+                    </button>
                 </div>
                 <div class="card--data card--col">
                     <p class="card__time">1hrs</p>
@@ -121,11 +122,11 @@
             <div class="card__stats card--radius">
                 <div class="card--col">
                     <h2 class="card__title">Social</h2>
-                    <div class="card__options card--col">
+                    <button class="card__options card--col" aria-label="options">
                         <span class="dot__one"></span>
                         <span class="dot__two"></span>
                         <span class="dot__three"></span>
-                    </div>
+                    </button>
                 </div>
                 <div class="card--data card--col">
                     <p class="card__time">1hrs</p>
@@ -139,11 +140,11 @@
             <div class="card__stats card--radius">
                 <div class="card--col">
                     <h2 class="card__title">Self Care</h2>
-                    <div class="card__options card--col">
+                    <button class="card__options card--col" aria-label="options">
                         <span class="dot__one"></span>
                         <span class="dot__two"></span>
                         <span class="dot__three"></span>
-                    </div>
+                    </button>
                 </div>
                 <div class="card--data card--col">
                     <p class="card__time">0hrs</p>
